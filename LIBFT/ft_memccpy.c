@@ -6,7 +6,7 @@
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/08 14:55:14 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/11/08 19:29:04 by ldeckers         ###   ########.fr       */
+/*   Updated: 2014/11/21 21:23:12 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	i = 0;
 	while (i < n)
 	{
-		tdst[i] == tsrc[i];
+		tdst[i] = tsrc[i];
 		if (tsrc[i] == d)
 			return ((void *)&tdst[i + 1]);
 		i++;

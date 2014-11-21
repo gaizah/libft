@@ -6,13 +6,13 @@
 /*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 21:00:19 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/11/03 21:32:40 by ldeckers         ###   ########.fr       */
+/*   Updated: 2014/11/21 21:37:20 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*strcpy(char *dst, const char *src)
+char	*ft_strcpy(char *dst, const char *src)
 {
 	int i;
 

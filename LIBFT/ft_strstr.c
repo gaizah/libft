@@ -6,13 +6,13 @@
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/06 17:43:05 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/11/06 18:35:16 by ldeckers         ###   ########.fr       */
+/*   Updated: 2014/11/21 21:42:24 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_check(char *str, char *to_find, int i)
+int		ft_check(const char *str, const char *to_find, int i)
 {
 	int		j;
 
@@ -38,7 +38,7 @@ char	*ft_strstr(const char *str, const char *to_find)
 	while (str[i] != '\0')
 	{
 		if (ft_check(str, to_find, i) == 0)
-			return (str + i);
+			return ((char *)str + i);
 		i++;
 	}
 	return (0);

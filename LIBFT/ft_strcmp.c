@@ -6,14 +6,11 @@
 /*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 17:09:17 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/11/10 19:51:33 by ldeckers         ###   ########.fr       */
+/*   Updated: 2014/11/21 21:19:38 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include "libft.h"
-
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {
