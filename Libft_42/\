@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+/*char	ft_strrchr(const *s, int c)
+{
+	int i;
+
+	i = 0;
+	while 
+}*/
+
+int	main(int argc, char **argv)
+{
+	printf("valeur de argc: %d", argc);
+	printf("argv[0]:%s\nargv[1]:%s\nargv[2]:%s\n", argv[0], argv[1], argv[2]);
+	return 0;
+}
