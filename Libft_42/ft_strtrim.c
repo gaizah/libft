@@ -1,5 +1,5 @@
-/* ************************************************************************** */
-/*                                                                            */
+/* ************************************************************************** */ 
+/*									      */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -11,33 +11,21 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 char	*ft_strtrim(char const *s)
 {
 	int i;
-	int j;
 	int len;
 	char *temp;
 
 	i = 0;
-	j = 0;
-	len = ft_strlen(s);
+	len = ft_strlen(s) - 1;
 	if (s == NULL)
 		return (NULL);
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ' && s[i] != '\0')
+	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
 		i++;
-	while  (s[len] != ' ' || s[len] != '\n' || s[len] != '\t')
+	while  (s[len] == ' ' || s[len] == '\n' || s[len] == '\t') 
 		len--;
-	temp = ft_strsub(s, j, (j - len));
+	temp = ft_strsub(s, i, len - i); 
 	return (temp);
-}
-
-int		main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		printf("%s\n", ft_strtrim(av[1]));
-	}
-	return (0);
 }

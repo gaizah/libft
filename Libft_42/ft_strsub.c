@@ -23,7 +23,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (((size_t)start + len) > ft_strlen(s))
 		return (NULL);
 	temp = (char*)malloc(sizeof(char) * len + 1);
-	while (i < len)
+	while (i <= len)
 	{
 		temp[i] = s[start++];
 		i++;
