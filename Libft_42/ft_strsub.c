@@ -6,7 +6,7 @@
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/07 23:42:57 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/01/08 00:38:15 by ldeckers         ###   ########.fr       */
+/*   Updated: 2015/02/05 18:19:59 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	if (((size_t)start + len) > ft_strlen(s))
 		return (NULL);
 	temp = (char*)malloc(sizeof(char) * len + 1);
-	while (i <= len)
+	while (i < len)
 	{
 		temp[i] = s[start++];
 		i++;

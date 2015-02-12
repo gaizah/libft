@@ -6,13 +6,13 @@
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/08 00:24:58 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/01/08 00:25:00 by ldeckers         ###   ########.fr       */
+/*   Updated: 2015/02/12 16:00:54 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_strdel(char **as)
+void	ft_strdel(char **ap)
 {
 	if (*ap)
 		free(*ap);

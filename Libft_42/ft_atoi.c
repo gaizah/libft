@@ -6,7 +6,7 @@
 /*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/24 23:49:21 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/12/27 08:36:41 by ldeckers         ###   ########.fr       */
+/*   Updated: 2015/02/12 18:17:51 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_atoi(const char *str)
 	i = 0;
 	temp = 0;
 	sign = 1;
+	if (ft_isspace(str[i]) == 1)
+		(NULL);
 	if (str[i] == '-')
 	{
 		sign *= -1;
