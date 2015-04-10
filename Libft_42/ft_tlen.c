@@ -1,18 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_len.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:53:47 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/02/23 17:20:15 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/04/10 17:17:55 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/10 18:07:57 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+int		ft_len(char *str, char c)
 {
-	ft_putnbr_fd(n, 1);
+	int i;
+	int j;
+
+	i = 0;
+	j = 0;
+	if (str == NULL || !c)
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (str[i] == c)
+		{
+			i++;
+			j++;
+		}
+		else
+			i++;
+	}
+	return (j);
 }

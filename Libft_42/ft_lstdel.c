@@ -1,18 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:53:47 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/02/23 17:20:15 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/04/09 19:18:53 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/09 19:36:49 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	ft_putnbr_fd(n, 1);
+	t_list	*list;
+	t_list	*tmp;
+
+	list = (*alst);
+	while (list)
+	{
+		tmp = list->next;
+		(*del)(list->content, list->content_size);
+		free(list);
+		list = tmp;
+	}
+	(*alst) = NULL;
 }

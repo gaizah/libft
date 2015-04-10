@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 20:45:19 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/12/27 04:48:47 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/02/19 16:34:08 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/10 19:28:00 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memalloc(size_t size)
+void			*ft_memalloc(size_t size)
 {
-	void	*mem;
+	void	*memory;
+	char	*explorer;
 
-	mem = malloc(size + 1);
-	if (mem == NULL)
+	if (!size || !(memory = (void *)malloc(size)))
 		return (NULL);
-	ft_bzero(mem, size);
-	return (mem);
+	explorer = (char *)memory;
+	while (size--)
+		*explorer++ = '\0';
+	return (memory);
 }

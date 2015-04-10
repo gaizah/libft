@@ -1,31 +1,50 @@
-/* ************************************************************************** */ 
-/*									      */
+/* ************************************************************************** */
+/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/07 23:37:48 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/01/08 20:13:35 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/04/10 18:08:22 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/10 18:13:17 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+static int		ft_len(char const *s, int i)
 {
-	int i;
-	int len;
-	char *temp;
+	int j;
+
+	j = ft_strlen(s) - 1;
+	while (ft_isspace(s[i]) == 1)
+		i++;
+	while (ft_isspace(s[j]) == 1)
+		j--;
+	if (j < i)
+		return (0);
+	return (j - i);
+}
+
+char			*ft_strtrim(char const *s)
+{
+	int		i;
+	int		j;
+	int		len;
+	char	*tmp;
 
 	i = 0;
-	len = ft_strlen(s) - 1;
-	if (s == NULL)
+	j = 0;
+	len = ft_len(s, i);
+	if (!(tmp = (char *)malloc(sizeof(char) * len + 1)))
 		return (NULL);
-	while (s[i] == '\n' || s[i] == '\t' || s[i] == ' ')
+	while (ft_isspace(s[i]) == 1)
 		i++;
-	while  (s[len] == ' ' || s[len] == '\n' || s[len] == '\t') 
+	while (len >= 0)
+	{
+		tmp[j++] = s[i++];
 		len--;
-	temp = ft_strsub(s, i, len - i); 
-	return (temp);
+	}
+	tmp[j] = '\0';
+	return (tmp);
 }

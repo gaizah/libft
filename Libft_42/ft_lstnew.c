@@ -1,34 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/07 23:42:57 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/04/10 18:14:05 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/04/08 16:13:08 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/08 20:20:45 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strsub(char const *s, unsigned int start, size_t len)
+t_list		*ft_lstnew(void const *content, size_t content_size)
 {
-	size_t		i;
-	char		*temp;
+	t_list	*newlist;
 
-	i = start + len;
-	if (s == NULL)
+	if (!(newlist = (t_list*)malloc(sizeof(t_list))))
 		return (NULL);
-	if (i > ft_strlen(s))
-		return (NULL);
-	temp = (char*)malloc(sizeof(char) * len + 1);
-	i = 0;
-	while (i < len)
+	if (content == NULL)
 	{
-		temp[i] = s[start++];
-		i++;
+		newlist->content = NULL;
+		newlist->content_size = 0;
 	}
-	temp[i] = '\0';
-	return (temp);
+	else
+	{
+		newlist->content = (void *)content;
+		newlist->content_size = content_size;
+	}
+	newlist->next = NULL;
+	return (newlist);
 }

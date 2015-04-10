@@ -6,7 +6,7 @@
 /*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 21:00:19 by ldeckers          #+#    #+#             */
-/*   Updated: 2014/11/21 21:37:20 by ldeckers         ###   ########.fr       */
+/*   Updated: 2015/03/25 16:40:04 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		dst[i] = src[i];
 		i++;
 	}
+	dst[i] = '\0';
 	return (dst);
 }

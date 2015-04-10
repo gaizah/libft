@@ -1,18 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_lstdelete.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ldeckers <ldeckers@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ldeckers <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/03 16:53:47 by ldeckers          #+#    #+#             */
-/*   Updated: 2015/02/23 17:20:15 by ldeckers         ###   ########.fr       */
+/*   Created: 2015/04/10 15:52:53 by ldeckers          #+#    #+#             */
+/*   Updated: 2015/04/10 17:53:47 by ldeckers         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr(int n)
+void		ft_lstdelete(t_list **del, t_list *prec, t_list *suiv)
 {
-	ft_putnbr_fd(n, 1);
+	prec->next = suiv;
+	free(*del);
 }
